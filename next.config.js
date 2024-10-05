@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', 
+    output: 'export',
+    basePath: '/frontend-test-app', 
+    assetPrefix: '/frontend-test-app/', 
     eslint: {
-        ignoreDuringBuilds: true, 
+        ignoreDuringBuilds: true,
     },
     typescript: {
         ignoreBuildErrors: true,
