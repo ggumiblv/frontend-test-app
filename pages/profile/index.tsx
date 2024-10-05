@@ -1,7 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 const Profile = () => {
-    const user = JSON.parse(sessionStorage.getItem('user'));
+    const user = useSelector((state: RootState) => state.user.user);
 
     return (
         <div>
