@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
 import { addRecord, editRecord } from '../../store/slices/recordsSlice';
+import style from './index.module.scss'
 
 const RecordsManager = () => {
     const records = useSelector((state: RootState) => state.records.records);
@@ -25,47 +26,51 @@ const RecordsManager = () => {
     };
 
     return (
-        <div>
-            <h2>Мои записи</h2>
-            <div>
+        <div className={style.container}>
+            <h2 className={style.title}>Мои записи</h2>
+            <div className={style.form}>
                 <input
+                    className={style.input}
                     type="text"
                     placeholder="Название записи"
                     value={newRecord.title}
                     onChange={(e) => setNewRecord({ ...newRecord, title: e.target.value })}
                 />
                 <input
+                    className={style.input}
                     type="text"
                     placeholder="Описание"
                     value={newRecord.description}
                     onChange={(e) => setNewRecord({ ...newRecord, description: e.target.value })}
                 />
-                <button onClick={handleAddRecord}>Добавить запись</button>
+                <button className={style.button} onClick={handleAddRecord}>Добавить запись</button>
             </div>
 
             {records.length > 0 && (
-                <ul>
+                <ul className={style.recordsList}>
                     {records.map((record) => (
-                        <li key={record.id}>
+                        <li className={style.recordItem} key={record.id}>
                             {editMode.id === record.id ? (
-                                <div>
+                                <div className={style.record}>
                                     <input
+                                        className={style.editInput}
                                         type="text"
                                         value={editMode.title}
                                         onChange={(e) => setEditMode({ ...editMode, title: e.target.value })}
                                     />
                                     <input
+                                        className={style.editInput}
                                         type="text"
                                         value={editMode.description}
                                         onChange={(e) => setEditMode({ ...editMode, description: e.target.value })}
                                     />
-                                    <button onClick={handleEditRecord}>Сохранить</button>
+                                    <button className={style.button} onClick={handleEditRecord}>Сохранить</button>
                                 </div>
                             ) : (
-                                <div>
-                                    <h3>{record.title}</h3>
-                                    <p>{record.description}</p>
-                                    <button onClick={() => setEditMode({ id: record.id, title: record.title, description: record.description })}>Редактировать</button>
+                                <div className={style.record}>
+                                    <h3 className={style.recordTitle}>{record.title}</h3>
+                                    <p className={style.recordDescription}>{record.description}</p>
+                                    <button className={style.editButton} onClick={() => setEditMode({ id: record.id, title: record.title, description: record.description })}>Редактировать</button>
                                 </div>
                             )}
                         </li>

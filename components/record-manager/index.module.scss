@@ -1,0 +1,100 @@
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.input {
+    min-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    &:focus {
+        border-color: #0070f3;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+    }
+}
+
+.editInput {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    min-width: 240px;
+    min-height: 30px;
+
+    &:focus {
+        border-color: #0070f3;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+    }
+}
+
+.button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #964cc7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #005bb5;
+    }
+}
+
+.recordsList {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.recordItem {
+    margin-bottom: 15px;
+}
+
+.record {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.recordTitle {
+    font-size: 18px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.recordDescription {
+    margin: 0;
+    padding-left: 10px;
+    flex-grow: 2;
+}
+
+.editButton {
+    padding: 6px 12px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+
+    &:hover {
+        background-color: #cc7a00;
+    }
+}

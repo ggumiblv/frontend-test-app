@@ -1,0 +1,16 @@
+*
+.container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    max-width: 1440px;
+    height: 100vh;
+    margin: auto !important;
+    color: #604949;
+    background-color: #ced5ec85;
+    font-family: 'Arial', 'Verdana', sans-serif;
+  }

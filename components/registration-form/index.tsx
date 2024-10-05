@@ -14,9 +14,7 @@ const RegistrationForm = () => {
     const router = useRouter();
 
     const onSubmit = (data) => {
-        // Сохраняем данные в Redux
         dispatch(setUser(data));
-        // Перенаправляем на страницу профиля
         router.push('/profile');
     };
 
